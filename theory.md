@@ -27,6 +27,12 @@ in 2015 september node js foundation holo node js by joyent + io.js by fedor got
 
 
   episode 2 - Js on server
+
+## what is a server?
+    server - jekono computer/device jar kache internet ache aar sei device ta programmed(in any programming language) kora in such a way that keu kono request korle ei device ta take response pathabe. erom device ke server bola hoye.
+    je mal ta request korche se mal ta jeno internet r sathe connected hoye tarpor request korche.
+    dewa newa using internet
+
   ![js on server](image-1.png)
 
   ![v8](image-2.png)
@@ -45,6 +51,7 @@ in 2015 september node js foundation holo node js by joyent + io.js by fedor got
 
 ![DNS lookup](<Screenshot (3619).png>)
 
+## how the internet works in depth
   phone theke data berolo packet hisabe
   tower opdi gelo (majkhane isp check kore je bhai data ta whitelist naki blacklist)
   tower data take electric signal e convert kore
@@ -52,13 +59,14 @@ in 2015 september node js foundation holo node js by joyent + io.js by fedor got
   tarpor oi nearest tower theke abar data ta packet rupe convert hoye receiver r device e dhukbe
   this process is the working of internet.
 
+## how the router works in depth
   router - this dabba got my mac address now whenever i msg someone this dabba gets the msg first and delivers it
   and when this dabba receives a msg it send me the msg because it knows my mac address now age ka dine mac address hack kora jeto and akhun hoyena as msg guno encrypted.
+  router ta basically ekta dalal jeita amader hoye data transfer korche
 
 
 
-  server - jekono computer/device jar kache internet ache aar sei device ta programmed(in any programming language) kora in such a way that keu kono request korle ei device ta take response pathabe. erom device ke server bola hoye.
-
+## how the internet works normally
  # just a doubt
 when i am searching google.com the dns lookup converts the name to the ip adress of google.com and asks whose server for a response ?
 
@@ -115,3 +123,4 @@ Yes, exactly! Each website typically has its own **server** or a **set of server
 - The DNS system helps find the correct IP address for that server.
 - Once the IP address is found, the browser directly communicates with the server of that specific website (Google, Flipkart, Amazon, etc.) to fetch and display the page.
 
+## 
