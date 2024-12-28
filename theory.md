@@ -123,4 +123,16 @@ Yes, exactly! Each website typically has its own **server** or a **set of server
 - The DNS system helps find the correct IP address for that server.
 - Once the IP address is found, the browser directly communicates with the server of that specific website (Google, Flipkart, Amazon, etc.) to fetch and display the page.
 
-## 
+## difference between http vs https
+
+internet e data dewa newa i.e. data request response http chara hobena
+only protocol to surf internet is http
+http hocche set of rules(jara internet toiri koreche tara ei rule guno ke baniyeche) jeita follow na korle we cant do internet surfing i.e., data dewa newa
+isp- internet service provider ra ei rules guno ke follow korbei
+
+now the difference-->
+http e thakle website r data ta ekta hacker read korte parbe this is extremely dangerous
+
+https e thakle website r data ta ekta hacker read korte parbe na as encrypted form e thakbe human readable form e thakbe na
+
+thats why https >> http
