@@ -136,3 +136,21 @@ http e thakle website r data ta ekta hacker read korte parbe this is extremely d
 https e thakle website r data ta ekta hacker read korte parbe na as encrypted form e thakbe human readable form e thakbe na
 
 thats why https >> http
+
+
+## ports-
+
+now server r sathe connection korte gele we need ports.
+ports - the places through which we can pass through to connect with the server.
+ports are just like gates which allows us to connect with the server.
+4-5 digit number like 1234 , 3000.
+
+there are two types of ports open vs closed ports
+
+suppose ami amar barite dhukte chaichi amar barir janla diye whiich is closed that means eita closed port so i cant enter the house using this port
+
+eibar suppose ami ekta mall e dhukte chaichi dorja diye jeita khola ache
+tarmane its a open port from which we can enter.
+
+we can choose our own port which is not already running.
+
