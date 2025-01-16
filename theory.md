@@ -199,6 +199,16 @@ a file is known as module
 
 now amra jokhun onno ekta module r code entry file ie app.js e run korate chai 
 tokhun amra require fn ta use kori 
+eg 
+app.js e -
+require("./xyz.js");
+
+xyz.js e-
+console.log("pb7 is typing");
+
+output -
+pb7 is typing.
+
 
 but at default ekta module nijer variable fn ke protect kore
 so we cant directly access them from app.js 

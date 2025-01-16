@@ -13,8 +13,9 @@
 
 //console.log(globalThis);
 
-console.log(globalThis === global);  // true
+//console.log(globalThis === global);  // true
 
+require("./xyz.js");
 
 
 
