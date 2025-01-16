@@ -19,11 +19,13 @@
 require("./xyz");
 // if we dont write the js extension then also it will work as node will automatically add the extension and search for the file and it will assume that the file is a js file
 //const object = require("./sum.js");
-const {calculateSum,p} = require("./sum.js"); // destructuring
+const {calculateSum,p} = require("./calculate/sum.js"); // destructuring
+const {calculateMultiply} = require("./calculate/multiply.js");
 var a = 10;
 var b = 20;
 //object.calculateSum(a, b);
 calculateSum(a, b);
+calculateMultiply(a, b);
 
 //console.log(object.p);
 console.log(p);

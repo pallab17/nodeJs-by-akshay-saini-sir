@@ -272,7 +272,7 @@ suppose we are writing a var with giving its type it will not run in mjs
 eg .   p=20;
 console.log(p); // error p not defined
 
-what is Module.exports - empty object - {}
+## what is Module.exports - empty object - {}
 
 console.log(module.exports); // empty object
 
@@ -280,3 +280,22 @@ another way of exporting-
 
 module.exports.p=p;
 module.exports.calculateSum=calculateSum;
+
+
+## always export and import as a object for a better code understanding
+
+## create a folder calculate and put the two files sum.js and multiply.js inside it
+
+## imp pattern 
+## now the thing is we are importing add fn,multiply fn from different files 
+
+so  we want to import them together from the calculate folder itself
+how will we do it?
+
+we are gonna create a file index.js and inside this index.js we will import the fns first that we want to import in app.js
+
+after that we are gonna export the index file
+
+and lastly we are gonna import all the fns we need from the index.js file directly
+
+
