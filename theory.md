@@ -1,4 +1,4 @@
-episode 1 - introduction to node js
+## episode 1 - introduction to node js
 node js = Nodejs is basically a Javascript runtime. built on chrome's V8 engine.
 Nodejs helps Javascript to run outside the browser 
 Nodejs has an event driven architecture that's the specialty of it.
@@ -26,8 +26,8 @@ in 2015 september node js foundation holo node js by joyent + io.js by fedor got
   ![introduction of node js r notes in pic format by as sir](image.png)
 
 
-  episode 2 - Js on server
-
+  ## episode 2 - Js on server
+suru
 ## what is a server?
     server - jekono computer/device jar kache internet ache aar sei device ta programmed(in any programming language) kora in such a way that keu kono request korle ei device ta take response pathabe. erom device ke server bola hoye.
     je mal ta request korche se mal ta jeno internet r sathe connected hoye tarpor request korche.
@@ -154,3 +154,41 @@ tarmane its a open port from which we can enter.
 
 we can choose our own port which is not already running.
 
+
+
+
+
+
+
+## episode 3 - lets write code
+install node js
+node -v === version of node
+
+npm -v automatically install hoye jaye
+
+![how tp run node code](image-9.png)
+
+![running js on node runtime  environment](image-10.png)
+node js = ja
+
+![node js = v8 engine + super power](image-11.png)
+
+![amra je code ta likhlam oita v8 engine ke pass kora hoye and that code is executed by v8 engine](image-12.png)
+
+
+vscode installation
+
+![first node js code](image-13.png)
+
+![global === global object aka one of the super powers  is provided by nodejs ](image-14.png)
+
+![global object of node js === global](image-15.png)
+
+![this keyword in node js outputs an empty object until in frontend this keyword outputs window ie the global object of browser](image-16.png)
+
+
+## globalThis is the same global object name for all the environments.
+
+![globalThis](image-17.png)
+
+![globalThis == global](image-18.png)
