@@ -16,6 +16,12 @@
 //console.log(globalThis === global);  // true
 
 require("./xyz.js");
+const object = require("./sum.js");
+var a = 10;
+var b = 20;
+object.calculateSum(a, b);
+
+console.log(object.p);
 
 
 

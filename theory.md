@@ -212,5 +212,23 @@ pb7 is typing.
 
 but at default ekta module nijer variable fn ke protect kore
 so we cant directly access them from app.js 
+![proof](image-19.png)
 amader export module korte hobe sei var ba fn ta jeitar access amra dite chai
 ebong import korte hobe oi particular var ba fn ta
+![module.exports for a fn](image-20.png)
+sum.js file e-
+function calculateSum(a, b) {
+  const sum = a + b;
+
+  console.log(sum);
+  
+
+}
+
+module.exports = calculateSum;
+
+
+now if we want to export both var and fns we have to use object
+![app.js file](image-21.png)
+![sum.js file](image-22.png)
+
