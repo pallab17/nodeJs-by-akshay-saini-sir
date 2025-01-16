@@ -28,6 +28,10 @@ const {calculateMultiply, calculateSum,p} = require("./calculate/pallab");
 // we dont need to write the index.js file name as node will automatically search for the index.js file if we dont write the file name as it will assume its a type of folder import
 // we can keep whatever file name we want index.js is not compulsory
 
+// importing the data from the data.json file
+const data = require("./data.json");
+console.log(data);
+
 var a = 10;
 var b = 20;
 //object.calculateSum(a, b);

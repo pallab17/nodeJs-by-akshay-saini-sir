@@ -1,0 +1,10 @@
+{
+    "name": "Pallab Banerjee",
+    "age": "24",
+    "email": "pallabb584@gmail.com",
+    "address": {
+        "city": "Kolkata",
+        "state": "West Bengal",
+        "country": "India"
+    }
+}

@@ -308,4 +308,8 @@ const {calculateMultiply, calculateSum,p} = require("./calculate/pallab");
 ## index.js file name renamed to pallab.js for proving.
 
 
+# how to import a json file in app.js file
+![importing json data](image-25.png)
+![data.json](image-26.png)
+
 
