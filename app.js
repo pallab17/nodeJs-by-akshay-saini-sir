@@ -19,8 +19,15 @@
 require("./xyz");
 // if we dont write the js extension then also it will work as node will automatically add the extension and search for the file and it will assume that the file is a js file
 //const object = require("./sum.js");
-const {calculateSum,p} = require("./calculate/sum.js"); // destructuring
-const {calculateMultiply} = require("./calculate/multiply.js");
+//const {calculateSum,p} = require("./calculate/sum.js"); // destructuring
+//const {calculateMultiply} = require("./calculate/multiply.js");
+
+
+// directly importing all the functions and variables from the index.js file
+const {calculateMultiply, calculateSum,p} = require("./calculate/pallab");
+// we dont need to write the index.js file name as node will automatically search for the index.js file if we dont write the file name as it will assume its a type of folder import
+// we can keep whatever file name we want index.js is not compulsory
+
 var a = 10;
 var b = 20;
 //object.calculateSum(a, b);

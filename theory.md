@@ -288,7 +288,7 @@ module.exports.calculateSum=calculateSum;
 
 ## imp pattern 
 ## now the thing is we are importing add fn,multiply fn from different files 
-
+ans -->
 so  we want to import them together from the calculate folder itself
 how will we do it?
 
@@ -297,5 +297,15 @@ we are gonna create a file index.js and inside this index.js we will import the 
 after that we are gonna export the index file
 
 and lastly we are gonna import all the fns we need from the index.js file directly
+
+ekta jayega theke sob kota fn import korchi basically
+
+// directly importing all the functions and variables from the index.js file
+const {calculateMultiply, calculateSum,p} = require("./calculate/pallab");
+// we dont need to write the index.js file name as node will automatically search for the index.js file if we dont write the file name as it will assume its a type of folder import
+
+## // we can keep whatever file name we want index.js is not compulsory
+## index.js file name renamed to pallab.js for proving.
+
 
 
