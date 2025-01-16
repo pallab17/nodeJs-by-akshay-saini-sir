@@ -192,3 +192,4 @@ vscode installation
 ![globalThis](image-17.png)
 
 ![globalThis == global](image-18.png)
+
