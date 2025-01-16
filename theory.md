@@ -232,3 +232,24 @@ now if we want to export both var and fns we have to use object
 ![app.js file](image-21.png)
 ![sum.js file](image-22.png)
 
+
+
+![another way of importing and exporting](image-23.png)
+
+first create a package.json file and change the type to module 
+
+tarpor directly export korte parbo
+// 2nd way of exporting the function and variable is as shown below
+
+ export function calculateSum(a, b) {
+  const sum = a + b;
+  console.log(sum);
+}
+export var p = " Hello Pallab";
+
+// 2nd way of importing the function and variable is as shown below
+import {calculateSum,p} from "./sum.js";
+var a = 10;
+var b = 20;
+calculateSum(a, b);
+console.log(p);
