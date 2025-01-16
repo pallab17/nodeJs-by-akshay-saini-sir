@@ -253,3 +253,30 @@ var a = 10;
 var b = 20;
 calculateSum(a, b);
 console.log(p);
+
+## akshay saini sir will use old way  common js module for this series
+so either package.json uriye debo or
+package.json e type = common js kore debo to go bavk to cjs module game of import and export
+
+
+![all differences btw cjs and mjs](image-24.png)
+
+## non strict mode example -
+suppose we are writing a var with giving its type it will run in cjs
+eg .   p=20;
+console.log(p); //20
+
+but
+## strict mode example -
+suppose we are writing a var with giving its type it will not run in mjs
+eg .   p=20;
+console.log(p); // error p not defined
+
+what is Module.exports - empty object - {}
+
+console.log(module.exports); // empty object
+
+another way of exporting-
+
+module.exports.p=p;
+module.exports.calculateSum=calculateSum;
