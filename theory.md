@@ -193,3 +193,14 @@ vscode installation
 
 ![globalThis == global](image-18.png)
 
+## episode 4 - module,export,require
+
+a file is known as module
+
+now amra jokhun onno ekta module r code entry file ie app.js e run korate chai 
+tokhun amra require fn ta use kori 
+
+but at default ekta module nijer variable fn ke protect kore
+so we cant directly access them from app.js 
+amader export module korte hobe sei var ba fn ta jeitar access amra dite chai
+ebong import korte hobe oi particular var ba fn ta
