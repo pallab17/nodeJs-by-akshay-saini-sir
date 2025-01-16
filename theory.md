@@ -209,7 +209,7 @@ console.log("pb7 is typing");
 output -
 pb7 is typing.
 
-
+a module doesn't leak its fn and variables
 but at default ekta module nijer variable fn ke protect kore
 so we cant directly access them from app.js 
 ![proof](image-19.png)
