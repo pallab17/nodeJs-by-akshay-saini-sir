@@ -313,3 +313,65 @@ const {calculateMultiply, calculateSum,p} = require("./calculate/pallab");
 ![data.json](image-26.png)
 
 
+# episode 5 - Diving into the NodeJS Github repo
+
+In this episode, we'll explore how modules actually work behind the scenes. We'll dive into how modules load into a page and how Node.js handles multiple modules, focusing on a deep dive into the
+module.exports and require functions
+
+
+Behind the scenes
+In JavaScript, when you create a function…
+function x () {
+const a = 10;
+function b () {
+console.log("b");
+}
+}
+Will you be able to access this value? no
+console.log(a);
+//op - a is not defined 
+
+
+Q: if u execute this code, will you be able to access it outside the
+function?
+A:
+You cannot access a value outside the function x because it is defined within the
+function's scope. Each function creates its own scope, so variables inside a
+function are not accessible from outside that function.
+To learn more about scope, check out this video: Understanding Scope in
+JavaScript.
+imp concept 🧐
+Modules in Node.js work similarly to function scopes. When you require a file,
+Node.js wraps the code from that file inside a function. This means that all
+variables and functions in the module are contained within that functions
+scope and cannot be accessed from outside the module unless explicitly
+exported.
+To expose variables or functions to other modules, you use module.exports . This allows you to export specific elements from the module, making them
+ accessible when required elsewhere in your application.
+All the code of a module is wrapped inside a function when you call require .
+This function is not a regular function; its a special type known as an IIFE
+(Immediately Invoked Function Expression). Heres how it works:
+(function () {
+ // All the code of the module runs inside here
+})();
+
+In this pattern, you create a function and then immediately invoke it. This is
+different from a normal function in JavaScript, which is defined and then called
+separately:
+function x(){}
+x();
+In Node.js, before passing the code to the V8 engine, it wraps the
+module code inside an IIFE. The purpose of IIFE is to:
+ Immediately Invoke Code: The function runs as soon as it is defined.
+ Keep Variables and Functions Private: By encapsulating the code within the
+IIFE, it prevents variables and functions from interfering with other parts of the
+code. This ensures that the code within the IIFE remains independent and
+private.
+Using IIFE solves multiple problems by providing scope isolation and immediate
+execution.
+![iife modules](image-1.png)
+![iife](image-2.png)
+![iife full](image-3.png)
+![iife fn](image.png)
+
+![steps behind require fn](image-4.png)
