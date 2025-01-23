@@ -1,3 +1,4 @@
+//const fs = require("fs");
 const fs = require("node:fs");
 const https = require("https");
 
@@ -6,7 +7,7 @@ console.log("Hello World");
 var a = 1078698;
 var b = 20986;
 
-// Synchronous
+// Synchronous this will block the execution of next line and block the call stack block the main thread
 // fs.readFileSync("./file.txt", "utf8"); // 10 ms
 // console.log("This will execute only after file read");
 
