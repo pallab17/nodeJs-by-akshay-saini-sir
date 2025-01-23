@@ -445,3 +445,17 @@ eibar ei kajer masi ta js r ekta kore line execute korbe
 js is synchronous but with  nodejs super power it becomes asynchronous
 
 ![sync vs async](image-8.png)
+
+![sync code1 ](image-10.png)
+![sync code 2](image-9.png)
+
+js doesnt have a concept of time
+![how will v8 engine do async work?](image-11.png)
+
+![we need super power!](image-12.png)
+
+![libuv is our super power](image-13.png)
+
+![v8 delegates the async work to libuv](image-14.png)
+
+![libuv executes most of the async work for us ](image-15.png)
