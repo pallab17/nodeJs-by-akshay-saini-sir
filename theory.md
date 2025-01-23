@@ -438,3 +438,6 @@ kajer masi ekta kore majche otai
 
 eibar js r jonno ekta kajer masi dorkar jar modhe abar v8 engine o cholche
 eibar ei kajer masi ta js r ekta kore line execute korbe
+
+![synchronous](image-6.png)
+![asynchronous](image-7.png)
