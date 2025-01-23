@@ -498,6 +498,12 @@ if u notice the sync functions like readfilesync doesnt have any callback fns
 keno thakbe?
 thori na libuv r kaj ache lol
 
-
-settimeout zero 
 ![settimeout flow](image-22.png)
+
+settimeout zero -
+setTimeout(() => {
+  console.log("call me right now ");
+}, 0);
+
+jotoi bolo 0ms e chalao
+main call stack phaka na thakle async fn r callback fn run korbe na sona
