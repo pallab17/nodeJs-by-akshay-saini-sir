@@ -439,5 +439,9 @@ kajer masi ekta kore majche otai
 eibar js r jonno ekta kajer masi dorkar jar modhe abar v8 engine o cholche
 eibar ei kajer masi ta js r ekta kore line execute korbe
 
-![synchronous](image-6.png)
-![asynchronous](image-7.png)
+![synchronous](image-6.png) blocking operation
+![asynchronous](image-7.png) non blocking operation
+
+js is synchronous but with  nodejs super power it becomes asynchronous
+
+![sync vs async](image-8.png)
