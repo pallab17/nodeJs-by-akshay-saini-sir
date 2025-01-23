@@ -173,7 +173,7 @@ node js = ja
 
 ![node js = v8 engine + super power](image-11.png)
 
-![amra je code ta likhlam oita v8 engine ke pass kora hoye and that code is executed by v8 engine](image-12.png)
+![amra je code ta likhlam oita v8 engine ke pass kora hoye and that code is executed by v8 engine](pics/image-12.png)
 
 
 vscode installation
@@ -191,7 +191,7 @@ vscode installation
 
 ![globalThis](image-17.png)
 
-![globalThis == global](image-18.png)
+![globalThis == global](/pics/image-18.png)
 
 ## episode 4 - module,export,require
 
