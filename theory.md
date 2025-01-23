@@ -449,7 +449,8 @@ js is synchronous but with  nodejs super power it becomes asynchronous
 ![sync code1 ](image-10.png)
 ![sync code 2](image-9.png)
 
-js doesnt have a concept of time
+# js doesnt have a concept of time
+
 ![how will v8 engine do async work?](image-11.png)
 
 ![we need super power!](image-12.png)
@@ -460,12 +461,12 @@ js doesnt have a concept of time
 
 ![libuv executes most of the async work for us ](image-15.png)
 
-![alt text](image-16.png)
+![working of libuv part 1](image-16.png)
 
-![alt text](image-17.png)
+![working of libuv part 2](image-17.png)
 fec toiri howar time  e heap memory  e result variable store korchi
 
-ar after fec is going out of the call stack the  garbage collector will throw the result variable from the  heap memory 
+ar after fec is going out of the call stack the  garbage collector will collect the result variable from the  heap memory 
 
 
 ![libuv r kaj](image-18.png)
@@ -483,9 +484,20 @@ ei kaj guno ke input output bola hoye
 node js r kache  ei non blocking I/O model ache bolei its famous.
 
 
-# episode 7 - sync async code
+# episode 7 - sync async code settimeout zero code
+
+ # this episode is the code implementation of the previous episode aka 6
 
 ![execution order ](image-20.png)
 
 
 ![cpu r feel newa xd by blocking the main thread](image-21.png)
+
+
+if u notice the sync functions like readfilesync doesnt have any callback fns
+keno thakbe?
+thori na libuv r kaj ache lol
+
+
+settimeout zero 
+![settimeout flow](image-22.png)
