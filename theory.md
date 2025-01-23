@@ -375,3 +375,66 @@ execution.
 ![iife fn](image.png)
 
 ![steps behind require fn](image-4.png)
+
+
+# episode 6 - libuv async io
+
+![Js synchronous single threaded lanaguage](image-5.png)
+
+# explain me thread
+Single-threaded and Multi-threaded
+like a kid
+
+# Alright, imagine your computer is like a pizza delivery shop. The "thread" is like a delivery person who takes pizzas (tasks) from the shop to the customers.
+
+### Single-Threaded:
+In a single-threaded shop, you have **only one delivery person**. They take one pizza at a time, deliver it, and then come back to the shop to pick up the next pizza. It works fine if the orders are few and simple. But if one delivery takes a long time, the others have to wait.
+
+- **Example**: You’re playing a video game, and only one thing happens at a time—when you press a button, the game responds one action at a time.
+
+### Multi-Threaded:
+In a multi-threaded shop, you have **multiple delivery people**. Each person can take a pizza and deliver it simultaneously. While one is delivering a pizza, another can deliver another pizza to a different customer. It’s much faster and more efficient for handling lots of orders.
+
+- **Example**: You’re using a smartphone. While you're watching a YouTube video, you can also receive notifications and download updates in the background—all at the same time.
+
+### Key Difference:
+- **Single-threaded**: One task at a time.
+- **Multi-threaded**: Many tasks at the same time.
+
+Threads help your computer work smarter by doing many things at once!
+
+ # A thread is the smallest unit of execution within a process in an
+operating system. It represents a single sequence of instructions
+that can be managed independently by a scheduler. Multiple
+threads can exist within a single process, sharing the same
+memory space but executing independently. This allows for
+parallel execution of tasks within a program, improving efficiency
+and responsiveness.
+explain me this like a kid
+ChatGPT said:
+ChatGPT
+Alright, let's break it down super simple:
+
+# Imagine your computer is like a big house where work happens (a process). Inside the house, there are workers (threads). Each worker is doing a job, like cleaning, cooking, or fixing stuff.
+
+Here's how it works:
+
+A thread is like one worker in the house. This worker does a specific job, step by step, following instructions (like cleaning a room or making lunch).
+
+A process is the whole house. It's the big workspace where all the workers (threads) live and do their tasks.
+
+Multiple threads (workers) can work in the same house (process) at the same time, sharing the same tools and space (memory). For example, if one worker is cooking in the kitchen, another can clean the living room.
+
+Since they're working together, they can finish things faster! This is called parallel execution because they’re doing different jobs at the same time.
+
+Why is this useful?
+Instead of waiting for one worker to finish everything, you get the job done quicker because many workers help out. Your computer can handle lots of stuff at once, like playing music, running a game, and downloading a file all at the same time!
+
+
+# thread is basically a kajer lok which executes a small portion of our task(process)
+
+suppose 20 ta dish majhte hobe
+kajer masi ekta kore majche otai
+
+eibar js r jonno ekta kajer masi dorkar jar modhe abar v8 engine o cholche
+eibar ei kajer masi ta js r ekta kore line execute korbe
