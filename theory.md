@@ -481,3 +481,8 @@ after executing this callback fns our job is over.
 I/O - input output 
 ei kaj guno ke input output bola hoye
 node js r kache  ei non blocking I/O model ache bolei its famous.
+
+
+# episode 7 - sync async code
+
+![execution order ](image-20.png)
