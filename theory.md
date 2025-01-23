@@ -459,3 +459,25 @@ js doesnt have a concept of time
 ![v8 delegates the async work to libuv](image-14.png)
 
 ![libuv executes most of the async work for us ](image-15.png)
+
+![alt text](image-16.png)
+
+![alt text](image-17.png)
+fec toiri howar time  e heap memory  e result variable store korchi
+
+ar after fec is going out of the call stack the  garbage collector will throw the result variable from the  heap memory 
+
+
+![libuv r kaj](image-18.png)
+libuv ke js engine async fn guno diyeche like api call,fs,settimeout
+so after ei api call,fs,settimeout r kaj sesh howar por
+libuv oi callback fn guno ke v8 engine ke diye bole bhai amar kaj sesh eibar tui execute kor ei callback fn gulo
+after executing this callback fns our job is over.
+
+
+
+
+![node js has asynchronous I/O or non blocking I/O](image-19.png)
+I/O - input output 
+ei kaj guno ke input output bola hoye
+node js r kache  ei non blocking I/O model ache bolei its famous.
