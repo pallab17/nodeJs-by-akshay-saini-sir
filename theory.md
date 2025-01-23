@@ -486,3 +486,6 @@ node js r kache  ei non blocking I/O model ache bolei its famous.
 # episode 7 - sync async code
 
 ![execution order ](image-20.png)
+
+
+![cpu r feel newa xd by blocking the main thread](image-21.png)
