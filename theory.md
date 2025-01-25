@@ -507,3 +507,38 @@ setTimeout(() => {
 
 jotoi bolo 0ms e chalao
 main call stack phaka na thakle async fn r callback fn run korbe na sona
+
+
+# episode 8 - how v8 engine works - behind the scenes
+
+![alt text](image-23.png)
+![alt text](image-37.png)
+
+![alt text](image-24.png)
+
+![alt text](image-25.png)
+
+when our code's ast cant be generated then we get syntax error
+
+![alt text](image-26.png)
+
+![alt text](image-27.png)
+
+![alt text](image-28.png)
+
+![alt text](image-29.png)
+
+![alt text](image-30.png)
+
+
+![alt text](image-31.png)
+
+![alt text](image-32.png)
+
+![alt text](image-33.png)
+
+![alt text](image-34.png)
+
+![alt text](image-35.png)
+
+![alt text](image-36.png)
