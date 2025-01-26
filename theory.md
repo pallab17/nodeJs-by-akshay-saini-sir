@@ -481,6 +481,7 @@ after executing this callback fns our job is over.
 ![node js has asynchronous I/O or non blocking I/O](image-19.png)
 I/O - input output 
 ei kaj guno ke input output bola hoye
+ei kaj = asynchronous kaj gulo jerom api call, read file aar set timeout fn ei pic e
 node js r kache  ei non blocking I/O model ache bolei its famous.
 
 
@@ -542,3 +543,20 @@ when our code's ast cant be generated then we get syntax error
 ![alt text](image-35.png)
 
 ![alt text](image-36.png)
+
+# episode 9 - libuv 
+
+![libuv](image-38.png)
+
+asynchronous aar non blocking io is possible due to libuv
+
+![alt text](image-39.png)
+
+callback fn gulo libuv r callback queue te output niye ferot ese bose thakbe
+
+eibar event loop r kaj holo check kora v8 engine r call-stack free naki busy aar check kora callback queue te kono callback fn pore ache kina
+
+jodi v8 r call-stack busy thake callback fn guno bosei thakbe wait kore
+
+jokhun v8 engine r call-stack free hobe event loop seita lokkho kore callback fn take callstack push kore execute korbe
+
