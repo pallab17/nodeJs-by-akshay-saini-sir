@@ -560,3 +560,26 @@ jodi v8 r call-stack busy thake callback fn guno bosei thakbe wait kore
 
 jokhun v8 engine r call-stack free hobe event loop seita lokkho kore callback fn take callstack push kore execute korbe
 
+![event loop](image-40.png)
+
+time wala callback gulo like setTimeout gets the 1st priority ie timer phase e execute hoye
+
+async callback fn gulo 2nd priority paye ie poll phase
+
+set immediate callback fn 3rd priority paye
+
+close phase e je fn gulo close ba stop hocche seiguno priority paye
+eg socket close
+
+![blue circle](image-41.png)
+
+internal loop ta every phase r age run kore
+
+so basically age ei internal loop ta run korbe after that timer phase chole tarpor abar
+ei internal loop ta run korbe after that poll phase cholbe tarpor abar
+ei internal loop ta run korbe after that check phase cholbe tarpor abar
+ei internal loop ta run korbe after that close phase cholbe 
+
+ei jinis ta continuously repeat hobe 
+
+
