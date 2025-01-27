@@ -666,3 +666,159 @@ Even though the "work" part of the asynchronous task was done in the thread pool
 
 The main thread (event loop) is always the context for JavaScript code execution.
 Developers don't need to worry about thread synchronization or race conditions in their callback code.
+
+
+
+This question gets to the heart of how **asynchronous operations** work in systems like **libuv** and the broader **Node.js** ecosystem. Let's clarify what's happening:
+
+### **Why Async Code Uses Both the Thread Pool and the Call Stack**
+
+1. **Thread Pool Execution**:
+   - When you execute an asynchronous operation (e.g., file I/O, `uv_queue_work`), libuv offloads the blocking or computationally intensive part to a thread in the thread pool.
+   - This allows the main event loop to continue running without being blocked.
+
+2. **Callback Mechanism**:
+   - Once the thread pool worker completes its task, it reports the result back to the **event loop**.
+   - At this point, the associated **callback** is queued in the **event loop’s task queue** (or "callback queue").
+
+3. **Call Stack Execution**:
+   - The event loop continuously checks its task queue for pending callbacks.
+   - When it finds one (like the callback for your async operation), it pushes the callback onto the **call stack** for execution.
+   - The code inside the callback is synchronous and executes sequentially on the main thread.
+
+### **Key Insight**
+The callback is executed on the main thread (and therefore appears on the call stack) because libuv’s design ensures that JavaScript (or other single-threaded code) runs in a single thread to maintain thread safety and avoid concurrency issues.
+
+Even though the "work" part of the asynchronous task was done in the thread pool, the **result processing** happens back in the main thread. This way:
+- The main thread (event loop) is always the context for JavaScript code execution.
+- Developers don't need to worry about thread synchronization or race conditions in their callback code.
+
+---
+
+### **Example Walkthrough**
+Consider this pseudo-process for an async file read:
+
+```javascript
+const fs = require('fs');
+
+fs.readFile('example.txt', (err, data) => {
+  console.log('File read completed:', data.toString());
+});
+```
+
+#### Steps:
+1. **API Call**:
+   - `fs.readFile` is called.
+   - Internally, libuv delegates the file read operation to a thread in the thread pool.
+
+2. **Thread Pool Work**:
+   - A thread from the thread pool performs the blocking file read operation.
+
+3. **Callback Queueing**:
+   - When the thread completes the task, the result (file content) is passed to the event loop and queued for the callback to run.
+
+4. **Call Stack Execution**:
+   - The event loop dequeues the callback and pushes it onto the main thread’s call stack for execution.
+   - This is why you see the callback execute in the **call stack**.
+
+---
+
+### **Why This Design?**
+
+1. **Thread Safety**:
+   - JavaScript was designed as a single-threaded language. This avoids complexities like race conditions and deadlocks.
+
+2. **Non-Blocking Design**:
+   - The thread pool handles blocking tasks. The event loop handles lightweight, high-frequency tasks efficiently.
+
+3. **Separation of Concerns**:
+   - Blocking and computationally intensive work is delegated to worker threads.
+   - Callback execution happens in the single-threaded JavaScript context.
+
+---
+
+### **Visualizing the Flow**
+
+Here’s a high-level breakdown:
+
+1. **Initial call** (e.g., `fs.readFile`) → Non-blocking API.
+2. **Task delegation** → Thread pool does the heavy lifting.
+3. **Completion notification** → Thread pool notifies the event loop.
+4. **Callback queueing** → Event loop schedules the callback.
+5. **Callback execution** → Callback runs on the call stack in the main thread.
+
+---
+
+### **Summary**
+
+The async code executes on the thread pool to prevent blocking the main thread. The **callback**, however, must execute on the main thread (call stack) because JavaScript operates in a single-threaded environment. This ensures the program remains thread-safe and aligns with JavaScript's non-blocking, event-driven design.
+
+
+## Q Can you change the size of the thread pool? A Yes, you can change the size of the thread pool by setting the UV_THREADPOOL_SIZEenvironment variable. For example, you can set it to 8 like this: 
+## process.env.UV_THREADPOOL_SIZE = 8;
+## If your production system involves heavy file handling or other tasks that benefitfrom additional threads, you can adjust the thread pool size accordingly to better suit your needs.
+
+![alt text](image-61.png)
+
+Ah, I see what you're asking now! You're wondering whether **simultaneous reading and writing on a socket connection** is the reason for blocking. The short answer is **no, simultaneous reading and writing on a socket does not inherently cause blocking**. Let me explain.
+
+---
+
+### **Key Points to Understand**
+1. **Sockets Can Handle Simultaneous Read and Write**:
+   - A socket is full-duplex, meaning it can read and write data simultaneously. 
+   - The **read side** and **write side** of a socket are independent of each other. Reading from a socket doesn’t interfere with writing to it, and vice versa.
+
+2. **Blocking Happens Due to Buffer States**:
+   - **Write Blocking**: Happens if the send buffer (used for writing) is full. This can occur if the network is slow, the receiver is slow, or the receiver’s TCP window size is small.
+   - **Read Blocking**: Happens if there’s no data available to read yet, and the application tries to read synchronously.
+
+3. **Why Blocking Isn't Caused by Simultaneous Read/Write**:
+   - The operating system manages the send buffer (for writes) and the receive buffer (for reads) separately.
+   - You can read and write concurrently without causing interference between the two operations.
+
+---
+
+### **So Why Might It Seem Like Blocking?**
+If you’re experiencing blocking while trying to write during an ongoing read, it’s likely due to one of these reasons:
+1. **Full Send Buffer**:
+   - The write operation blocks because the send buffer is full, not because of the read operation happening at the same time.
+   
+2. **Blocking Socket Mode**:
+   - If the socket is in its default **blocking mode**, any operation (read or write) will wait until it completes successfully:
+     - Writes wait for space in the send buffer.
+     - Reads wait for data to arrive.
+
+3. **TCP Flow Control or Network Conditions**:
+   - If the receiver is slow or the network is congested, it affects the send buffer’s availability, leading to blocking on writes.
+
+---
+
+### **How to Avoid Blocking in This Case**
+1. **Non-Blocking Mode**:
+   - Set the socket to non-blocking mode so that `read` and `write` calls return immediately if they can’t proceed, rather than waiting.
+
+   ```c
+   int flags = fcntl(sockfd, F_GETFL, 0);
+   fcntl(sockfd, F_SETFL, flags | O_NONBLOCK);
+   ```
+
+2. **Use Asynchronous I/O**:
+   - Use an event-driven mechanism (like **libuv**, **epoll**, or **select**) to handle reads and writes without blocking.
+   - These libraries notify you when a socket is ready for reading or writing.
+
+3. **Separate Threads**:
+   - Use separate threads for reading and writing, if you’re working in a multithreaded environment, to ensure one doesn’t block the other.
+
+---
+
+### **Conclusion**
+Simultaneous reading and writing on a socket **do not cause blocking by themselves** because they operate on separate buffers. Blocking occurs due to other factors like full send buffers, network delays, or the use of blocking mode. Switching to non-blocking sockets or asynchronous I/O can help avoid these issues and ensure smooth operation.
+
+
+
+
+![lesson part 1](image-62.png)
+
+
+![lessons part 2](image-63.png)
