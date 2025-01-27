@@ -592,3 +592,6 @@ ei jinis ta continuously repeat hobe
 
 ![demo 2.3](image-45.png)
 
+![demo 3.1](image-46.png)
+![demo 3.2](image-47.png)
+
