@@ -598,3 +598,16 @@ ei jinis ta continuously repeat hobe
 ![demo 3.3](image-48.png)
 
 ![ my output](image-49.png)
+
+
+![event loop r kaj na thakle event loop poll phase e wait kore bose thake](image-50.png)
+
+
+
+browser r event loop aar node r event loop different
+
+![demo 4.1](image-51.png)
+
+![demo 4.2](image-52.png)
+
+![demo 4.3](image-53.png)
