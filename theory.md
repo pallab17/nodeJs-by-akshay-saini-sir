@@ -615,3 +615,54 @@ browser r event loop aar node r event loop different
 ![my output](image-54.png)
 
 ![my output for demo 4.4](image-55.png)
+
+
+
+# episode 10 - thread pool
+
+![thread pool](image-59.png)
+
+![node pg e event loop](image-56.png)
+
+![libuv pg e event loop](image-57.png)
+
+
+![event loop](image-58.png)
+
+![alt text](image-60.png)
+
+Whenever there's an asynchronous task, V8 offloads it to libuv. For example,
+when reading a file, libuv uses one of the threads in its thread pool. The file
+system (fs) call is assigned to a thread in the pool, and that thread makes a
+request to the OS. While the file is being read, the thread in the pool is fully
+occupied and cannot perform any other tasks. Once the file reading is complete,
+the engaged thread is freed up and becomes available for other operations. For
+instance, if you're performing a cryptographic operation like hashing, it will be
+assigned to another thread. There are certain functions for which libuv uses the
+thread pool.
+In Node.js, the default size of the thread pool is 4 threads:
+UV_THREADPOOL_SIZE=4
+Now, suppose you make 5 simultaneous file reading calls. What happens is that 4
+file calls will occupy 4 threads, and the 5th one will wait until one of the threads is
+free.
+
+# Now that you have enough knowledge, answer this question: Is Node.js singlethreaded or multi-threaded?
+ # If you're dealing with synchronous code, Node.js is single-threaded. But if you're dealing with asynchronous tasks, it utilizes libuv's thread pool, making it multithreaded.
+
+
+ ## my qs is if the async code is executed using a thread in thread pool then why it is again executed in callstack 
+ChatGPT said:
+ChatGPT
+This question gets to the heart of how asynchronous operations work in systems like libuv and the broader Node.js ecosystem. Let's clarify what's happening:
+
+## Why Async Code Uses Both the Thread Pool and the Call Stack
+Thread Pool Execution:
+
+## When you execute an asynchronous operation (e.g., file I/O, uv_queue_work), libuv offloads the blocking or computationally intensive part to a thread in the thread pool. This allows the main event loop to continue running without being blocked.Callback Mechanism: Once the thread pool worker completes its task, it reports the result back to the event loop.At this point, the associated callback is queued in the event loop’s task queue (or "callback queue"). Call Stack Execution: The event loop continuously checks its task queue for pending callbacks.When it finds one (like the callback for your async operation), it pushes the callback onto the call stack for execution.The code inside the callback is synchronous and executes sequentially on the main thread.
+Key Insight
+The callback is executed on the main thread (and therefore appears on the call stack) because libuv’s design ensures that JavaScript (or other single-threaded code) runs in a single thread to maintain thread safety and avoid concurrency issues.
+
+Even though the "work" part of the asynchronous task was done in the thread pool, the result processing happens back in the main thread. This way:
+
+The main thread (event loop) is always the context for JavaScript code execution.
+Developers don't need to worry about thread synchronization or race conditions in their callback code.
