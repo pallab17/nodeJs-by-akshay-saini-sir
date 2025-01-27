@@ -582,6 +582,13 @@ ei internal loop ta run korbe after that close phase cholbe
 
 ei jinis ta continuously repeat hobe 
 
-ei event loop r bhetore loop duto tokhun ei run korbe jokhun callstack empty thakbe
+# ei event loop r bhetore loop duto tokhun ei run korbe jokhun callstack empty thakbe
 
 ![demo 1 ](image-42.png)
+
+![demo 2.1](image-43.png)
+
+![demo 2.2](image-44.png)
+
+![demo 2.3](image-45.png)
+
