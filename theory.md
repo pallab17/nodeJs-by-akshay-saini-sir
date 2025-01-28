@@ -1069,3 +1069,29 @@ Blocking tasks prevent the event loop from running efficiently and should be avo
 - Check if the API has "Sync" in its name.
 - Understand the nature of the task (e.g., I/O is often non-blocking, CPU work is often blocking).
 - Refer to Node.js documentation for clarity.
+
+
+## epi 11- creating a server
+
+![alt text](image-64.png)
+
+![alt text](image-65.png)
+
+![alt text](image-66.png)
+
+![alt text](image-67.png)
+
+![alt text](image-68.png)
+
+![alt text](image-69.png)
+
+![alt text](image-70.png)
+
+![alt text](image-71.png)
+
+![alt text](image-72.png)
+
+![alt text](image-73.png)
+
+![alt text](image-74.png)
+
