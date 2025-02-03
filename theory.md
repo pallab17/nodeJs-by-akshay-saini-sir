@@ -1120,7 +1120,7 @@ basically ask korche kon app diye database r sathe khelte chao
 
 ![alt text](image-81.png)
 
-amra mongodb compass use korbo - mongodb compass ekta app jeikhane database ke visualize kora jaye ie chokher samne dekha jaye
+amra mongodb compass use korbo - mongodb compass ekta app jeikhane database ke visualize kora jaye i.e.  chokher samne dekha jaye
 jehetu amra database r sathe khelte chai  mongodb compass e 
 tai amader ke ei uri ta save korte rakhte hobe
 tarpor ei uri ta mongodb compass e giye paste korle
@@ -1154,5 +1154,14 @@ this helped me to delete the demo database cluster
 soln ?
 create a .gitignore file and write node modules inside it
 
+4. now we have opened the documentation of mongodb
+and now lets connect to mongodb
+
+![alt text](image-85.png)
+
+![alt text](image-86.png)
+
+![alt text](image-87.png)
 
 
+mongoose use korbo amra in production not this mongodb moddule
