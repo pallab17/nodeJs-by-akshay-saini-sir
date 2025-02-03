@@ -1095,3 +1095,61 @@ Blocking tasks prevent the event loop from running efficiently and should be avo
 
 ![alt text](image-74.png)
 
+ # episode 13 - creating a database mongodb
+
+   # 1. gugul e mongo db search korlam toh mongodb atlas khullo 
+ which is the server of mongodb 
+ je amader database ta free te manage korbe bollo 
+free te manage koranor jonno amader kotar kaaj korte hobe
+ # 1.1. amader prothome mongodb r pg e loggin korte hobe tarpor
+![project pg of mongodb](image-75.png)
+project pg na khulle prothome after login home logo te click korle projects pg khule jabe
+
+new project create korte hobe basically ![1st pg ](image-76.png)
+![alt text](image-77.png)
+
+now we have to create a cluster--> ![alt text](image-78.png)
+
+we need to store the password for this cluster ![alt text](image-79.png) 
+// i55vv65mEDwsHuFD
+
+![alt text](image-80.png)
+
+eibar oi database r sathe connect korar onek upay ache -
+basically ask korche kon app diye database r sathe khelte chao
+
+![alt text](image-81.png)
+
+amra mongodb compass use korbo - mongodb compass ekta app jeikhane database ke visualize kora jaye ie chokher samne dekha jaye
+jehetu amra database r sathe khelte chai  mongodb compass e 
+tai amader ke ei uri ta save korte rakhte hobe
+tarpor ei uri ta mongodb compass e giye paste korle
+amra amader database r sathe connection korte parbo.
+![alt text](image-82.png)
+ // mongodb+srv://pallabb584:i55vv65mEDwsHuFD@democluster.oy7w2.mongodb.net/
+
+
+https://stackoverflow.com/questions/69797985/all-charts-apps-need-to-be-terminated-before-the-project-can-be-deleted 
+this helped me to delete the demo database cluster
+
+ 2. eibar amader database ready
+ so we can play with the database in 2 ways-
+ directly from the compass or by writing code
+ 
+ firstly we will create a database inside it we create a collection(table)
+ ![alt text](image-83.png)
+ inside that collection we have one particular data jeitake amra document boli
+ document r modhe field wise data thake
+ ![alt text](image-84.png)
+ ei id wala obj hocche ekta document
+ name r city hocche fields
+
+ ## now now now we wont use the compass to create anything again we will code to perform crud operations on our db.
+ to do this-
+
+ 1. we first need the mongodb module to  make our code connect with db
+ 2. to do that we need to install using
+ npm i mongodb
+
+ 
+
