@@ -1148,8 +1148,11 @@ this helped me to delete the demo database cluster
  to do this-
 
  1. we first need the mongodb module to  make our code connect with db
- 2. to do that we need to install using
+ 2. to do that we need to install mongodb using
  npm i mongodb
+3. now we dont want to push the node modules to github which came from installing
+soln ?
+create a .gitignore file and write node modules inside it
 
- 
+
 
