@@ -175,10 +175,10 @@ get method use koralo
 
 ![alt text](image-11.png)   end with fly
 
-![alt text](image-12.png)
+![alt text](image-12.png) req.query
 
-![alt text](image-13.png)
+![alt text](image-13.png)  req.params
 
-![alt text](image-14.png)
+![alt text](image-14.png)  req.params
 
-![alt text](image-15.png)
+![alt text](image-15.png)  summary of episode 17
