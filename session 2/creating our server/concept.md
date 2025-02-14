@@ -116,3 +116,5 @@ Define routes (app.get(), app.post(), etc.).
 Use middleware (app.use()).
 Start the server (app.listen(3000)).
 So in simple words, we are creating an Express app (app) and making it behave like a web server by calling express(). 🚀
+
+node modules gitignore e rekhe push the code
