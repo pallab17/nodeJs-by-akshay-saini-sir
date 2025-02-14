@@ -1,4 +1,4 @@
-summary -
+summary of episode 16 -
 
 ![summary](<Screenshot (3845).png>)
 
@@ -118,3 +118,10 @@ Start the server (app.listen(3000)).
 So in simple words, we are creating an Express app (app) and making it behave like a web server by calling express(). 🚀
 
 node modules gitignore e rekhe push the code
+
+
+![last summary of epi 16](image.png)
+
+summary of episode 17 -
+
+.gitignore r importance
