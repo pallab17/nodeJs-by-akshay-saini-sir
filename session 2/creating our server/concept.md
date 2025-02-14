@@ -125,3 +125,60 @@ node modules gitignore e rekhe push the code
 summary of episode 17 -
 
 .gitignore r importance
+
+
+now aks told us that 
+jodi amra / route r por jekono jinis likhi
+it will provide us the output response of / route only
+
+ami jerom
+http://localhost:7777/ e gelam so amake output e hello world dilo
+
+and http://localhost:7777/about e gelam eikhaneo amake output e hello world dilo
+
+karon ektai / r por je route tai likhbo seitar output / route r output tai asbe
+
+solution ki ? order chqnge kore dao code r
+/ route r response code last e likhle
+je jar route r response ei pabe
+that is http://localhost:7777/about e gelam eikhaneo amake pb7 here dilo
+tarpor http://localhost:7777/ e gelam so amake output e hello world dilo
+    ![solution](image-1.png)
+
+
+
+![order of routes matters a lot](image-2.png)
+
+
+
+api test korar jonno postman install koralo
+
+get method use koralo
+
+![get method](image-3.png)
+
+![get method part 2](image-4.png)
+
+
+![alt text](image-5.png)
+
+![alt text](image-6.png)
+
+![alt text](image-7.png)   * mane eikhane ja khusi lekha jabe
+
+![alt text](image-8.png)   ? mark mane optional
+
+![alt text](image-9.png)   + mane jotobar iccha dewa jabe
+
+![alt text](image-10.png)   a thaklei run korbe
+
+
+![alt text](image-11.png)   end with fly
+
+![alt text](image-12.png)
+
+![alt text](image-13.png)
+
+![alt text](image-14.png)
+
+![alt text](image-15.png)
