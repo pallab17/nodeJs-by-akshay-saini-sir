@@ -496,6 +496,8 @@ we can write another route handler
 
 ## episode 19 --> database ,schema and model
 
+cluster = collection of more than one databases.
+
 first thing connect korlo database r cluster r sathe using moongose libary
 so firstly i installed mongoose
 by using npm i mongoose
@@ -506,3 +508,4 @@ i took from app
 
 its a better approach to connect to the database before listening to the server
 
+![alt text](image-28.png)
