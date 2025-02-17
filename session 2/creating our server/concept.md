@@ -481,3 +481,14 @@ app.listen(3000, () => console.log('Server running on port 3000'));
 
 
 handle request errors-
+![alt text](image-23.png)
+![alt text](image-24.png)
+
+basically umm try catch r modhe code lekha best way
+
+but for extra error case
+we can write another route handler
+![err parameter starting e likhtei hobe](image-25.png)
+![alt text](image-26.png)
+
+![summary of epi 18](image-27.png)
