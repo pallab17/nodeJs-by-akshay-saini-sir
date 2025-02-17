@@ -182,3 +182,34 @@ get method use koralo
 ![alt text](image-14.png)  req.params
 
 ![alt text](image-15.png)  summary of episode 17
+
+
+## episode 18 - route handlers and middlewares
+![alt text](<Screenshot (3872).png>)
+![alt text](<Screenshot (3873).png>)
+![alt text](<Screenshot (3874).png>)
+![alt text](<Screenshot (3876).png>)
+![alt text](<Screenshot (3877).png>)
+
+
+![alt text](image-16.png)
+
+![alt text](<Screenshot (3880).png>)
+![alt text](image-17.png)
+
+jokhun ekta user ekta particular pg r data chaiche
+suppose get /user
+
+tokhun exactly jota functions oi same user route r sathe match korche sei sob kota fn ke middleware bole.
+
+last e je fn ta response ferot debe take ei request handler bola hocche.
+
+kintu eisob kota fn ei request handler ei 
+
+just onek kota alada naam eder
+
+taijonnoi middleware chain e ghore express aar je middleware ta response ferot deye seitake request handler bole.
+
+
+why do we need middlewares?
+
