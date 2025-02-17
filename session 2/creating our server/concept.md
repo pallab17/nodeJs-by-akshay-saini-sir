@@ -492,3 +492,11 @@ we can write another route handler
 ![alt text](image-26.png)
 
 ![summary of epi 18](image-27.png)
+
+
+## episode 19 --> database ,schema and model
+
+first thing connect korlo database r cluster r sathe using moongose libary
+so firstly i installed mongoose
+by using npm i mongoose
+
