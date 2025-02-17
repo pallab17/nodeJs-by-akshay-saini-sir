@@ -500,3 +500,9 @@ first thing connect korlo database r cluster r sathe using moongose libary
 so firstly i installed mongoose
 by using npm i mongoose
 
+after that take that cluster url from the application mongodb compass or gugul mongo db atlas theke 
+i took from app
+
+
+its a better approach to connect to the database before listening to the server
+

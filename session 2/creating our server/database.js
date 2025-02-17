@@ -5,9 +5,10 @@ const connectDB = async () => {
     "mongodb+srv://pallabb584:0PIKnVqUhEkQae51@cluster0.em26u.mongodb.net/"
   );
 };
+module.exports = connectDB;
 
-connectDB().then(()=>{
-    console.log("Database connected");
-}).catch((err)=>{
-    console.error("database not connected");
-})
+// connectDB().then(()=>{
+//     console.log("Database connected");
+// }).catch((err)=>{
+//     console.error("database not connected");
+// })
