@@ -524,3 +524,7 @@ its a better approach to connect to the database before listening to the server
 ![alt text](image-33.png)
 
 ![alt text](image-34.png)
+
+
+prottek ta mongoose fn hocche async fn tai async wait use korbo aar secondly 
+await ta try catch r modhe likhbo to make our code handle bug efficiently
