@@ -528,3 +528,104 @@ its a better approach to connect to the database before listening to the server
 
 prottek ta mongoose fn hocche async fn tai async wait use korbo aar secondly 
 await ta try catch r modhe likhbo to make our code handle bug efficiently
+
+
+## episode 20 --> diving into the apis
+
+whats api
+ChatGPT said:
+API stands for Application Programming Interface. It's a set of rules that allows different software applications to communicate with each other. APIs define the methods and data formats that programs can use to request and exchange information.
+
+Example of API Usage:
+Web APIs: Services like Google Maps, Twitter, or weather apps expose APIs so developers can fetch data (e.g., get live weather updates).
+REST API: A common API type using HTTP requests to GET, POST, PUT, and DELETE data.
+GraphQL API: A flexible API format that allows clients to request only the data they need.
+Would you like an example of how an API works in code? 🚀
+
+
+
+
+
+
+
+You said:
+another explanation plz
+ChatGPT said:
+Sure! Think of an API like a waiter in a restaurant.
+
+You (the user) sit at the table and look at the menu (this is like a website or app).
+You tell the waiter your order (this is your request to the API).
+The waiter takes your order to the kitchen (the server) and tells the chefs what to make.
+The kitchen prepares the food and gives it to the waiter (the API processes your request).
+The waiter brings the food back to your table (the API delivers the response).
+In short, an API is the messenger that lets different software systems talk to each other and share data. 🎯
+
+Need a real-world example? 😊
+
+
+
+
+
+
+
+You said:
+yes
+ChatGPT said:
+Alright! Let’s take Google Maps API as a real-world example.
+
+Imagine you're building a ride-sharing app like Uber. You need to show the user’s location and nearby drivers on a map. Instead of creating your own map system from scratch, you can use Google Maps API to fetch map data and display it in your app.
+
+How it works:
+Your app sends a request to the Google Maps API, asking for map details of a specific location.
+Google’s servers process the request and return the data (like roads, buildings, and landmarks).
+Your app receives the data and displays the map with all the details.
+Code Example (Fetching a Map using Google Maps API in JavaScript):
+javascript
+Copy
+Edit
+function initMap() {
+  var location = { lat: 37.7749, lng: -122.4194 }; // San Francisco
+  var map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 12,
+    center: location
+  });
+}
+This code loads a Google Map centered on San Francisco using the API.
+
+💡 This is just one example—APIs are used everywhere! Want to see an API in action that you can try yourself? 🚀
+
+
+
+
+
+
+
+You said:
+but when we talk about api
+api is just another website with different params where user is suppose filling a form so the form website here is the api and this data on the api will now be stored in db
+ChatGPT said:
+You're on the right track! An API is basically a special kind of website that accepts requests and returns responses, often in a structured format like JSON or XML.
+
+Breaking It Down:
+API as a Website:
+
+Just like a regular website, an API has a URL (e.g., https://api.example.com/users).
+Instead of showing a web page, it returns data (like JSON).
+API as a Form:
+
+When you fill out a form on a website and hit submit, the form sends data to the server.
+APIs work similarly—clients (like apps) send data using requests (e.g., POST request).
+Database Storage:
+
+The API takes the submitted data and stores it in a database.
+Later, another request (e.g., GET) can retrieve the stored data.
+Example of an API in Action
+Imagine you have a user registration form:
+
+Form on a Website: User enters name, email, and password.
+API Request: The form sends a POST request to https://api.example.com/register.
+Database: The API stores the user’s data in the database.
+API Response: The API returns { "message": "User registered successfully" }.
+So, yeah—APIs are like websites, but instead of showing pages, they exchange data between applications! 🔥
+
+
