@@ -2,17 +2,19 @@ const express = require("express");
 const app = express();
 const connectDB = require("./database");
 const User = require("./models/user");
+app.use(express.json());
 
 app.post("/signup",async(req,res)=>{
-  // creating a new instance of the user model 1st way
-  constObj = {
-    firstName:"Plllllllllllaab",
-    lastName:"Baee",
-    emailId:"pall@1.com",
-    password:"palb123",
+// creating a new instance of the user model 1st way
+  // constObj = {
+  //   firstName:"Plllllllllllaab",
+  //   lastName:"Baee",
+  //   emailId:"pall@1.com",
+  //   password:"palb123",
 
-  }
-  const user = new User(constObj);
+  // }
+  // const user = new User(constObj);
+  
   // creating a new instance of the user model 2nd way
   // const user = new User({
   //   firstName:"Pallab",
@@ -20,6 +22,10 @@ app.post("/signup",async(req,res)=>{
   //   emailId:"pall@17.com",
   //   password:"palllab123",
   // })
+
+  // creating a new instance of the user model 3rd way using req.body that is data from the client side that is dynamic data
+  // console.log(req.body);
+  const user = new User(req.body);
   try{
     // saving the user to the database
      await user.save();

@@ -629,3 +629,29 @@ API Response: The API returns { "message": "User registered successfully" }.
 So, yeah—APIs are like websites, but instead of showing pages, they exchange data between applications! 🔥
 
 
+eibar amra sikhte cholechi how to add dynamic data 
+directly from postman 
+so amra postman e jabo
+body select korbo 
+tarpor raw version r modhe giye json select korbo
+
+such that imagine postman r ei api version ta actually toh hocche oi registration form pg
+so when we are putting data dynamically mane random user eshe nijer data debe 
+tokhun ei data ta server r kache jabe (server ei moment e amader laptop)
+tarpor server ei data take db e send korbe
+
+eita korar somoye i.e after writing the data in postman 
+if we want to read the data in our system we cant directly do it
+as req.body korleo seita json format r data ke convert kore dekhate parbe na amader
+![proof](image-35.png)
+
+so we need a json middleware je amader ke json format r data ke amader dekhabe normal js obj hisabe
+![done](image-36.png)
+
+
+now this req.body is the same thing that we were writing as a java obj and passing to the new User fn while creating a new user 
+
+so ei req.body takei directly pass kore debo new User r modhe
+
+such that amra je data likhbo postman e seita amader server db te dhukiye debe.
+
