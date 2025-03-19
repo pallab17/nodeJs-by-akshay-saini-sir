@@ -688,3 +688,5 @@ User.findByIdAndUpdate({_id:userId},updateObj);
 now eikhane findByIdAndUpdate ekta third parameter o neye so amra jodi kono third parameter na di tahole by default third paramter = before assume kore and data update howar age je data ta chilo seitai hocche before r mane so it will return us the previous data as a object
 tai jonnoi  3rd paramter ta na diye amra dekhlam aar console log kore dekhlam before update r value tai amra before r modhe pacchi as a object
 ![proof](image-37.png)
+
+![summary of episode 20](image-38.png)
