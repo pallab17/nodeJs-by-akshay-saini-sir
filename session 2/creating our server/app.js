@@ -39,7 +39,7 @@ app.get("/feed",async(req,res)=>{
   }
 })
 
-
+// adding a new user to the database
 app.post("/signup",async(req,res)=>{
 // creating a new instance of the user model 1st way
   // constObj = {
@@ -73,6 +73,7 @@ app.post("/signup",async(req,res)=>{
   }
 })
 
+// deleting a user from the database
 app.delete("/user", async(req,res)=>{
   const userId = req.body.userId;
   try{
@@ -83,6 +84,22 @@ app.delete("/user", async(req,res)=>{
   }catch(err){
     res.status(400).send("User not deleted" + err.message);
   }
+})
+
+// updating a user in the database
+// we can use findByIdAndUpdate() method to update the user in the database
+app.patch("/user", async(req,res)=>{
+  const userId = req.body.userId;
+  const updateObj = req.body;
+  try{
+    const user = await User.findByIdAndUpdate({_id:userId},updateObj);
+    console.log(user);
+    res.send("User updated successfully");
+    
+  }catch(err){
+    res.status(400).send("User not deleted" + err.message);
+  }
+
 })
 
 connectDB()

@@ -679,3 +679,12 @@ const user = await User.findByIdAndDelete({_id:userId});
 in this case _id ta hocche amar db r modhe ekta field
 so it means je jodi userId bole kono id theke thake amar db te
 tahole delete that particular id wala user
+
+
+
+- update api toiri korlam
+using 
+User.findByIdAndUpdate({_id:userId},updateObj);
+now eikhane findByIdAndUpdate ekta third parameter o neye so amra jodi kono third parameter na di tahole by default third paramter = before assume kore and data update howar age je data ta chilo seitai hocche before r mane so it will return us the previous data as a object
+tai jonnoi  3rd paramter ta na diye amra dekhlam aar console log kore dekhlam before update r value tai amra before r modhe pacchi as a object
+![proof](image-37.png)
