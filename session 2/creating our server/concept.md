@@ -655,3 +655,18 @@ so ei req.body takei directly pass kore debo new User r modhe
 
 such that amra je data likhbo postman e seita amader server db te dhukiye debe.
 
+done
+
+
+now time for get request
+so we created get requests for 2 apis
+1. get req to find the user details for a particular emailId jeita amra likhchi postman e 
+so ekta user jodi ekta particular emailid lekhe amader api te amader server sei emailid wala manus r data ta take dekhiye debe jodi thake 
+aar na thakle error debe
+
+2. get request to see all the users in our feed pg
+basically db e jekota user ache sob kota user details show hobe feed pg e jokhun jabe ekta user
+
+find vs findOne difference hocche
+findOne returns only one user's data
+suppose my db has 2 same emailid wala useer tokhun findOne fn ta amader ke sei user r details debe jeita old id mane age account toiri koreche je
