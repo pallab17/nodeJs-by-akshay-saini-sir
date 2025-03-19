@@ -73,6 +73,18 @@ app.post("/signup",async(req,res)=>{
   }
 })
 
+app.delete("/user", async(req,res)=>{
+  const userId = req.body.userId;
+  try{
+    // const user = await User.findByIdAndDelete({_id:userId}); //1st way
+     const user = await User.findByIdAndDelete(userId); //2nd way
+
+    res.send("User deleted successfully");
+  }catch(err){
+    res.status(400).send("User not deleted" + err.message);
+  }
+})
+
 connectDB()
   .then(() => {
     console.log("Database connected");

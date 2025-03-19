@@ -670,3 +670,12 @@ basically db e jekota user ache sob kota user details show hobe feed pg e jokhun
 find vs findOne difference hocche
 findOne returns only one user's data
 suppose my db has 2 same emailid wala useer tokhun findOne fn ta amader ke sei user r details debe jeita old id mane age account toiri koreche je
+
+
+- delete user api created
+id take mongodb compass theke tullam after that postman e use kore id wala user take oralam
+
+const user = await User.findByIdAndDelete({_id:userId});
+in this case _id ta hocche amar db r modhe ekta field
+so it means je jodi userId bole kono id theke thake amar db te
+tahole delete that particular id wala user
