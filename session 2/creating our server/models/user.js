@@ -3,12 +3,16 @@ const mongoose = require("mongoose");
 const userSchema = new mongoose.Schema({
   firstName: {
     type: String,
+    required: true,
   },
   lastName: {
     type: String,
   },
   emailId: {
     type: String,
+    required: true,
+    unique: true,
+    lowercase: true,
   },
   password: {
     type: String,
@@ -19,6 +23,13 @@ const userSchema = new mongoose.Schema({
   gender: {
     type: String,
   },
+  about:{
+    type: String,
+    default:"Hello i am using this xyz app",
+  },
+  skills:{
+    type: [String],
+  }
 });
 
 // way 1 to export the model

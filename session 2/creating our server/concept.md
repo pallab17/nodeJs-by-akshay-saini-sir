@@ -526,7 +526,7 @@ its a better approach to connect to the database before listening to the server
 ![alt text](image-34.png)
 
 
-prottek ta mongoose fn hocche async fn tai async wait use korbo aar secondly 
+prottek ta mongoose fn hocche async fn tai async await use korbo aar secondly 
 await ta try catch r modhe likhbo to make our code handle bug efficiently
 
 
@@ -690,3 +690,41 @@ tai jonnoi  3rd paramter ta na diye amra dekhlam aar console log kore dekhlam be
 ![proof](image-37.png)
 
 ![summary of episode 20](image-38.png)
+
+
+## episode 21 -- data sanitization and schema validation
+
+basically post aka create aar patch aka update code niye amader main chinta
+as user ei duto method ei data push korte parbe
+so amader ke bhalo bhabe data take test kore nite hobe
+
+so prothome lets learn about db schema te change kora
+
+1. emailID firstname ei field guno ditei hobe
+so required property use korbo amra
+  required: true,
+
+2. eibar jerom emailID sobar unique hobe
+so amra unique property use korbo
+    unique: true,
+
+3. now if we want to have a default property that is
+suppose ekta dating app e 
+about section e ekta default statement thakbe hello i am using this dating app
+so ekta user ei field take na bhorleo ei default value ta db e store hobe
+default:"Hello i am using this xyz app",
+
+
+4. suppose we want multiple ans of a qs
+like skills so we will create a array 
+and ekta user jodi ans na deye
+tahole
+db e ekta empty array toiri hobe
+type: [String],
+
+
+5. suppose a user is writing their maid in capital
+so we will use property of lowercase beforehand only
+to make sure everything the user wrote is in lowercase
+
+
