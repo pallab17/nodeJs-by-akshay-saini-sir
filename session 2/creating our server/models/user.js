@@ -40,9 +40,12 @@ const userSchema = new mongoose.Schema({
   skills:{
     type: [String],
   }
+},{
+  timestamps: true, // this will add createdAt and updatedAt fields to the schema
 });
 
 // way 1 to export the model
+// here "User" is the name of the model and userSchema is the schema that we have created above and mongoose.model is a function that takes two arguments first is the name of the model and second is the schema that we have created above and it will create a model with the name User and schema userSchema and we can use this model to create a new user in the database
 const User =  mongoose.model("User",userSchema);
 
 module.exports = User;

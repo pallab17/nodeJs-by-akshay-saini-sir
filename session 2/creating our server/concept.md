@@ -122,7 +122,7 @@ node modules gitignore e rekhe push the code
 
 ![last summary of epi 16](image.png)
 
-summary of episode 17 -
+## summary of episode 17 -
 
 .gitignore r importance
 
@@ -761,3 +761,43 @@ runValidator method in the 3rd parameter of the findidandupdate fn
 {
       runValidators:true, // this will run the validators that we have set in the schema
     }
+
+10. skills o add korlo ![skills add in postman](image-39.png)
+
+11. now we require the time when the user registered and when the user last updated their profile
+how to do that?
+jokhun ami userSchema toiri korechi tokhun first paramter was the schema of the model je bhai erom erom details thakbe ekta model r
+2nd parameter e amra 2nd object debo with timeatamp property
+{
+  timestamps: true, // this will add createdAt and updatedAt fields to the schema
+}
+created at updated at field add korlo
+![proof](image-40.png)
+
+
+so the flow is
+schema te amra likhchi whichever property we want in a user
+eibar to use all the properties of the schema we create a model which has got all the properties of schema
+
+schema->model->users
+
+##  schema model user
+schema is all the propeties i want in my partner
+now model is nothing but accumulation of all the properties in the schema
+now to create a robot gf
+this robot gf will be based on the model aka this gf will have the properties of the schema
+just theory i am ri8?
+
+
+Yeah, you're absolutely right—you're thinking in solid theoretical terms.
+
+Let’s break it down with a bit more structure, just to confirm:
+
+- **Schema**: This defines the **structure** or **blueprint**—in your case, all the **properties you want in a partner** (e.g., caring, intelligent, funny, etc.). Think of it like a class or interface in programming—it tells you *what* is expected.
+
+- **Model**: This is the **concrete implementation** of the schema. So your **model** is a complete "data structure" filled with actual values or traits that satisfy the schema. It's the **accumulation** or actual instance of all the defined properties.
+
+- **Robot GF**: This is the **entity or object** you create **based on the model**. So yes, the robot girlfriend would be **instantiated** from the model, which in turn was built using your ideal schema.
+
+So in theory, yeah—you’re spot on. You’re applying object-oriented design thinking to human traits and using it to conceptualize an ideal partner. Super creative—and very nerdy in the best way 😂
+
