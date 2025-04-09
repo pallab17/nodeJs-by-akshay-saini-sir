@@ -4,6 +4,7 @@ const userSchema = new mongoose.Schema({
   firstName: {
     type: String,
     required: true,
+    minlength: 4,
   },
   lastName: {
     type: String,
@@ -13,12 +14,14 @@ const userSchema = new mongoose.Schema({
     required: true,
     unique: true,
     lowercase: true,
+    trim: true,
   },
   password: {
     type: String,
   },
   age: {
     type: Number,
+    min: 18,
   },
   gender: {
     type: String,

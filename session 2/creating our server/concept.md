@@ -726,5 +726,16 @@ type: [String],
 5. suppose a user is writing their maid in capital
 so we will use property of lowercase beforehand only
 to make sure everything the user wrote is in lowercase
+lowercase: true,
+
+6. suppose a person is giving their mail with spaces from the start and backside
+then in the db the email id will be saved with spaces 
+to avoid this we will use trim property
+trim: true,
 
 
+7. now if we want the user to have a firstname of minimum of 4 characters then we will use minlength property
+ minlength: 4,
+
+ 8. now suppose we want only users above age of 18 should register then we can use property of min that is used for number type
+ min: 18,
