@@ -25,6 +25,13 @@ const userSchema = new mongoose.Schema({
   },
   gender: {
     type: String,
+    validate(value){
+      // this is a custom validator function which will check if the value is in the array or not such that if the value is not in the array then it will throw an error and the value should be either male female or others and value is the string that the user is providing.
+      if(["male","female","others"].includes(value)==false){
+        throw new Error("Gender data is invalid");
+
+      }
+    },
   },
   about:{
     type: String,

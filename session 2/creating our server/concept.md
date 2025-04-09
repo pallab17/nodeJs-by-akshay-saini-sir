@@ -739,3 +739,25 @@ trim: true,
 
  8. now suppose we want only users above age of 18 should register then we can use property of min that is used for number type
  min: 18,
+
+
+ 9. schema validation
+ suppose we want the user to have a gender of  either male,female or others
+ how to do that ?
+ using custom validation in user model
+
+      validate(value){
+      // this is a custom validator function which will check if the value is in the array or not such that if the value is not in the array then it will throw an error and the value should be either male female or others and value is the string that the user is providing.
+      if(["male","female","others"].includes(value)==false){
+        throw new Error("Gender data is invalid");
+
+      }
+    },
+but there is a catch 
+we cant use the custom validatation fn for update methods we can only use it for create fn
+now to use this fn in patch aka update method 
+we have to use
+runValidator method in the 3rd parameter of the findidandupdate fn
+{
+      runValidators:true, // this will run the validators that we have set in the schema
+    }

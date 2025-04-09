@@ -92,7 +92,9 @@ app.patch("/user", async(req,res)=>{
   const userId = req.body.userId;
   const updateObj = req.body;
   try{
-    const user = await User.findByIdAndUpdate({_id:userId},updateObj);
+    const user = await User.findByIdAndUpdate({_id:userId},updateObj,{
+      runValidators:true, // this will run the validators that we have set in the schema
+    });
     console.log(user);
     res.send("User updated successfully");
     
