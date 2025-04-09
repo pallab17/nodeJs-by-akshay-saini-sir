@@ -700,22 +700,22 @@ so amader ke bhalo bhabe data take test kore nite hobe
 
 so prothome lets learn about db schema te change kora
 
-1. emailID firstname ei field guno ditei hobe
+## 1. emailID firstname ei field guno ditei hobe
 so required property use korbo amra
   required: true,
 
-2. eibar jerom emailID sobar unique hobe
+## 2. eibar jerom emailID sobar unique hobe
 so amra unique property use korbo
     unique: true,
 
-3. now if we want to have a default property that is
+## 3. now if we want to have a default property that is
 suppose ekta dating app e 
 about section e ekta default statement thakbe hello i am using this dating app
 so ekta user ei field take na bhorleo ei default value ta db e store hobe
 default:"Hello i am using this xyz app",
 
 
-4. suppose we want multiple ans of a qs
+## 4. suppose we want multiple ans of a qs
 like skills so we will create a array 
 and ekta user jodi ans na deye
 tahole
@@ -723,25 +723,25 @@ db e ekta empty array toiri hobe
 type: [String],
 
 
-5. suppose a user is writing their maid in capital
+## 5. suppose a user is writing their email in capital
 so we will use property of lowercase beforehand only
 to make sure everything the user wrote is in lowercase
 lowercase: true,
 
-6. suppose a person is giving their mail with spaces from the start and backside
+## 6. suppose a person is giving their mail with spaces from the start and backside
 then in the db the email id will be saved with spaces 
 to avoid this we will use trim property
 trim: true,
 
 
-7. now if we want the user to have a firstname of minimum of 4 characters then we will use minlength property
+## 7. now if we want the user to have a firstname of minimum of 4 characters then we will use minlength property
  minlength: 4,
 
- 8. now suppose we want only users above age of 18 should register then we can use property of min that is used for number type
+ ## 8. now suppose we want only users above age of 18 should register then we can use property of min that is used for number type
  min: 18,
 
-
- 9. schema validation
+## db validator
+ ## 9. schema validation
  suppose we want the user to have a gender of  either male,female or others
  how to do that ?
  using custom validation in user model
@@ -762,9 +762,9 @@ runValidator method in the 3rd parameter of the findidandupdate fn
       runValidators:true, // this will run the validators that we have set in the schema
     }
 
-10. skills o add korlo ![skills add in postman](image-39.png)
+## 10. skills o add korlo ![skills add in postman](image-39.png)
 
-11. now we require the time when the user registered and when the user last updated their profile
+## 11. now we require the time when the user registered and when the user last updated their profile
 how to do that?
 jokhun ami userSchema toiri korechi tokhun first paramter was the schema of the model je bhai erom erom details thakbe ekta model r
 2nd parameter e amra 2nd object debo with timeatamp property
@@ -801,3 +801,93 @@ Let’s break it down with a bit more structure, just to confirm:
 
 So in theory, yeah—you’re spot on. You’re applying object-oriented design thinking to human traits and using it to conceptualize an ideal partner. Super creative—and very nerdy in the best way 😂
 
+## api validator
+## 12. now we will make sure that when a user is trying to update some of their data
+we will allow only some of the data fields aka mail names cant be updated
+
+how to do it?
+we have to create api validator
+
+app.patch("/user", async (req, res) => {
+  const userId = req.body.userId;
+  const updateObj = req.body;
+  try {
+    const allowed_updates = ["userId","about", "skills", "age", "gender"];
+    // this will check if the keys in the updateObj are present in the allowed_updates array or not and if not then it will throw an error
+    // this is a way to check if the keys in the updateObj are present in the allowed_updates array or not and if not then it will throw an error
+    // but when we are testing this then we can use any key in the updateObj and it will not throw an error but when we are using this in production then we can use only the keys that are present in the allowed_updates array and if we use any other key then it will throw an error and we can use this to check if the keys in the updateObj are present in the allowed_updates array or not and if not then it will throw an error
+    // but when we will create from the client side then we will use only the keys that are present in the allowed_updates array and if we use any other key then it will throw an error and we can use this to check if the keys in the updateObj are present in the allowed_updates array or not and if not then it will throw an error so basically the user cant update the user with any other key that is not present in the allowed_updates array and this is a way to check if the keys in the updateObj are present in the allowed_updates array or not and if not then it will throw an error
+    const isUpdateAllowed = Object.keys(updateObj).every((key) =>
+      allowed_updates.includes(key)
+    );
+    if (!isUpdateAllowed) {
+      // return res.status(400).send("Invalid updates");
+      throw new Error("Invalid updates");
+    }
+    if(updateObj?.skills?.length>10){
+      throw new Error("Skills should be less than 10");
+    }
+    const user = await User.findByIdAndUpdate({ _id: userId }, updateObj, {
+      runValidators: true, // this will run the validators that we have set in the schema
+    });
+    console.log(user);
+    res.send("User updated successfully");
+  } catch (err) {
+    res.status(400).send("User not deleted" + err.message);
+  }
+});
+
+
+eibar amra userId key take update korte debona
+so amra /user e na giye
+/user/:userId route e jabo
+such that
+amra 
+instead of const userId = req.body.userId;
+const userId = req.params?.userId use korte pari and we will fetch the userId from the top using params
+
+`req.params` is a property in Express.js (a popular Node.js web framework) that contains **route parameters**. These are parts of the URL that act as variables, and they are defined in the route path using a colon (`:`) syntax.
+
+### Example:
+
+```js
+const express = require('express');
+const app = express();
+
+// Route with a parameter called "userId"
+app.get('/users/:userId', (req, res) => {
+  const userId = req.params.userId;
+  res.send(`User ID is: ${userId}`);
+});
+```
+
+If a request is made to `http://localhost:3000/users/42`, then:
+
+```js
+req.params = { userId: '42' }
+```
+
+### Summary:
+- `req.params` is used to access URL parameters.
+- Parameters are defined in the route path with a colon.
+- It's always an object where each key is the parameter name.
+
+## Data sanitization : api validators
+
+
+ ## 13. eibar kotha ta hocche je email validator e onek kota validation korte hoye
+@ , .com
+onek jala
+tai baire theke ekta extension use korbo je amader hoye mail validate kore debe
+npm i validator = install
+
+code -->
+
+const validator = require("validator");
+validate(value) {
+      if(!validator.isEmail(value)) {
+        throw new Error("Email is invalid");
+      }
+    }
+
+   ![summmary of episode 21](image-41.png)
